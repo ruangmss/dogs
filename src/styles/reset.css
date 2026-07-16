@@ -20,6 +20,8 @@ ul {
 
 body {
   font: var(--primary-md);
+  color: var(--black);
+  padding-top: 55px;
 }
 
 a {
