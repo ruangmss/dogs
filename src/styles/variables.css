@@ -1,0 +1,17 @@
+:root {
+  /* Famílias de fontes */
+  --primary-font: Helvetica, Arial, sans-serif;
+  --secondary-font: 'Spectral', Georgia, serif;
+
+  /* Estilos com fonte primária */
+  --primary-sm: 400 0.875rem/1.4 var(--primary-font);
+  --primary-md: 400 1rem/1.5 var(--primary-font);
+  --primary-lg: 500 1.125rem/1.4 var(--primary-font);
+  --primary-xl: 600 1.5rem/1.25 var(--primary-font);
+
+  /* Estilos com fonte secundária */
+  --secondary-sm: 400 1rem/1.5 var(--secondary-font);
+  --secondary-md: 600 1.5rem/1.3 var(--secondary-font);
+  --secondary-lg: 700 2rem/1.2 var(--secondary-font);
+  --secondary-xl: 700 3rem/1.1 var(--secondary-font);
+}
