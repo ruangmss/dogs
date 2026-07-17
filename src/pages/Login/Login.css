@@ -1,0 +1,29 @@
+.login-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.login-layout img {
+  object-fit: cover;
+}
+
+.login-forms {
+  max-width: 700px;
+  padding: 30px;
+}
+
+@media (max-width: 1200px) {
+  .login-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .login-layout img {
+    display: none;
+  }
+
+  .forms {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,37 @@
+.login-bg {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slide 0.3s ease-out forwards;
+}
+
+.login-form {
+  margin-bottom: 30px;
+}
+
+.login-forgot-password {
+  display: inline-block;
+  color: var(--grey-2);
+  padding: 10px 0;
+  text-decoration: underline;
+}
+
+.login-registration {
+  margin-top: 50px;
+}
+
+.login-registration p {
+  margin: 20px 0;
+}
+
+.login-subtitle {
+  font: var(--secondary-lg);
+}
+
+.login-subtitle:after {
+  content: '';
+  display: block;
+  background-color: var(--grey);
+  height: 7.5px;
+  width: 60px;
+  border-radius: var(--sm-border);
+}

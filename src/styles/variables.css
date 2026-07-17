@@ -18,4 +18,17 @@
   /* Paleta de Cores */
   --white: #fff;
   --black: #333;
+  --grey: #eee;
+  --grey-2: #555;
+  --red: #f31;
+  --primary-1: #fb1;
+  --primary-2: #764701;
+  --primary-3: #fea;
+  --primary-hover: #f0b113;
+
+  /* Bordas */
+  --sm-border: 5px;
+  --md-border: 10px;
+  --lg-border: 15px;
+  --xl-border: 20px;
 }
