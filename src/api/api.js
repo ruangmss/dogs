@@ -1,6 +1,6 @@
 const API_URL = 'https://dogsapi.origamid.dev/json';
 
-export function LOGIN_POST(user, password) {
+export function LOGIN_POST(username, password) {
   return {
     url: `${API_URL}/jwt-auth/v1/token`,
     options: {
@@ -10,7 +10,7 @@ export function LOGIN_POST(user, password) {
       },
       body: JSON.stringify({
         // O endpoint espera ua string JSON
-        user: user,
+        username: username,
         password: password,
       }),
     },
@@ -37,6 +37,23 @@ export function TOKEN_VALIDATE_POST(token) {
       headers: {
         Authorization: `Bearer ${token}`,
       },
+    },
+  };
+}
+
+export function USER_POST(username, email, password) {
+  return {
+    url: `${API_URL}/api/user`,
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: username,
+        email: email,
+        password: password,
+      }),
     },
   };
 }

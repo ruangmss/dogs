@@ -23,7 +23,7 @@ const LoginPage = () => {
   }
 
   return (
-    <section className="login-bg">
+    <section className="bg">
       <h1 className="title">Login</h1>
       <form onSubmit={submitForm} className="login-form">
         <Input label="Usuário" type="text" name="user" {...user} />

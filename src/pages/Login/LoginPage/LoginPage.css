@@ -1,4 +1,4 @@
-.login-bg {
+.bg {
   opacity: 0;
   transform: translateX(-20px);
   animation: slide 0.3s ease-out forwards;
