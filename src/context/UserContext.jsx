@@ -17,6 +17,7 @@ export const UserStorage = ({ children }) => {
       const token = localStorage.getItem('token');
 
       if (!token) {
+        setLogin(false);
         return;
       }
 
@@ -32,13 +33,13 @@ export const UserStorage = ({ children }) => {
         }
 
         await getUser(token); // getUser é assíncrona, por isso o await
-        navigate('/conta');
       } catch (error) {
         userLogout(); // Faz com que os estados sejam resetados em casos de erro
       } finally {
         setLoading(false);
       }
     }
+
     autoLogin();
   }, []);
 

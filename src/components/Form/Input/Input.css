@@ -13,7 +13,7 @@
 }
 
 .input:hover,
-.input:focus {
+.input:focus-visible {
   border-color: var(--primary-1);
   background-color: var(--white);
   outline: none;

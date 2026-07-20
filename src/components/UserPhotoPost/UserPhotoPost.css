@@ -1,0 +1,29 @@
+.photo-post {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.file {
+  margin-bottom: 15px;
+}
+
+.photo-preview {
+  border-radius: var(--md-border);
+  overflow: hidden;
+}
+
+.photo-preview img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: var(--md-border);
+}
+
+@media (max-width: 768px) {
+  .photo-post {
+    grid-template-columns: 1fr;
+  }
+}
