@@ -33,3 +33,83 @@
   border-color: var(--primary-1);
   outline: none !important;
 }
+
+.mobile-button {
+  background-color: var(--grey);
+  border-radius: var(--sm-border);
+  display: flex;
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  transition: 0.3s;
+}
+
+.mobile-button::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 5px;
+  box-shadow:
+    0 6px currentColor,
+    0 -6px currentColor;
+  transition: 0.3s;
+}
+
+.mobile-button:focus-visible,
+.mobile-button:hover {
+  outline: none;
+  background-color: var(--white);
+  box-shadow: 0 0 0 2px var(--primary-3);
+  border-color: var(--primary-1);
+}
+
+.mobile-button.active::after {
+  transform: rotate(-90deg);
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  box-shadow:
+    0 8px currentColor,
+    0 -8px currentColor;
+}
+
+.user-header-nav-mobile {
+  display: block;
+  position: absolute;
+  top: 70px;
+  right: 0px;
+  padding: 0 15px;
+  background-color: var(--white);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: var(--sm-border);
+  transform: translateX(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.user-header-nav-mobile.active {
+  transform: initial;
+  opacity: 1;
+  z-index: 10;
+  pointer-events: initial;
+}
+
+.user-header-nav-mobile a,
+.user-header-nav-mobile button {
+  display: flex;
+  align-items: center;
+  background-color: none;
+  width: 100%;
+  border-bottom: 1px solid var(--grey);
+  padding: 10px 0;
+  gap: 5px;
+}
+
+.user-header-nav-mobile button {
+  border: none;
+}

@@ -6,33 +6,51 @@ import feed from '../../../assets/feed.svg';
 import statistics from '../../../assets/statistics.svg';
 import logout from '../../../assets/logout.svg';
 import './UserHeaderNav.css';
+import useMedia from '../../../hooks/useMedia';
+import { useLocation } from 'react-router-dom';
 
 const UserHeaderNav = () => {
-  const [mobile, setMobile] = React.useState(null);
   const { userLogout } = React.useContext(UserContext);
+  const mobile = useMedia('(max-width: 768px)');
+  const [mobileMenu, setMobileMenu] = React.useState(false);
+  const { pathname } = useLocation();
+
+  React.useEffect(() => {
+    setMobileMenu(false);
+  }, [pathname]);
 
   return (
-    <nav className="user-header-nav">
-      <NavLink to="/conta" end>
-        <img src={feed} alt="Ícone de feed" />
-        {mobile && 'Minhas Fotos'}
-      </NavLink>
+    <>
+      {mobile && (
+        <button
+          aria-label="Menu"
+          className={`mobile-button ${mobileMenu ? 'active' : ''}`}
+          onClick={() => setMobileMenu(!mobileMenu)}
+        ></button>
+      )}
 
-      <NavLink to="/conta/postar">
-        <img src={add} alt="Ícone de adicionar postagem" />
-        {mobile && 'Adicionar Post'}
-      </NavLink>
+      <nav className={mobile ? `user-header-nav-mobile ${mobileMenu ? 'active' : ''}` : 'user-header-nav'}>
+        <NavLink to="/conta" end>
+          <img src={feed} alt="Ícone de feed" />
+          {mobile && 'Minhas Fotos'}
+        </NavLink>
 
-      <NavLink to="/conta/estatisticas" alt="Ícone de estatísticas">
-        <img src={statistics} />
-        {mobile && 'Estatísticas'}
-      </NavLink>
+        <NavLink to="/conta/postar">
+          <img src={add} alt="Ícone de adicionar postagem" />
+          {mobile && 'Adicionar Post'}
+        </NavLink>
 
-      <button onClick={userLogout}>
-        <img src={logout} alt="Ícone de logout" />
-        {mobile && 'Sair'}
-      </button>
-    </nav>
+        <NavLink to="/conta/estatisticas" alt="Ícone de estatísticas">
+          <img src={statistics} />
+          {mobile && 'Estatísticas'}
+        </NavLink>
+
+        <button onClick={userLogout}>
+          <img src={logout} alt="Ícone de logout" />
+          {mobile && 'Sair'}
+        </button>
+      </nav>
+    </>
   );
 };
 
