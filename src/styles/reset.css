@@ -41,3 +41,7 @@ button {
 button:disabled {
   cursor: not-allowed;
 }
+
+input[type='file'] {
+  display: block;
+}
