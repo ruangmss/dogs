@@ -17,6 +17,14 @@
 .header-link {
   padding: 10px 5px;
   font-weight: 600;
+  display: flex;
+  gap: 10px;
+}
+
+.header-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
 }
 
 .header-link:last-child {

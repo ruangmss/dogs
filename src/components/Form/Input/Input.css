@@ -1,0 +1,32 @@
+.input-wrapper {
+  margin-bottom: 15px;
+}
+
+.input {
+  border: 1px solid var(--grey);
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--sm-border);
+  background-color: var(--grey);
+  transition: 0.3s;
+}
+
+.input:hover,
+.input:focus {
+  border-color: var(--primary-1);
+  background-color: var(--white);
+  outline: none;
+  box-shadow: 0 0 0 1px var(--primary-3);
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-error {
+  font: var(--primary-sm);
+  color: var(--red);
+  margin-top: 5px;
+}
