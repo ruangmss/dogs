@@ -1,0 +1,13 @@
+.feed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 15px;
+  justify-items: center;
+}
+
+@media (max-width: 768px) {
+  .feed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
