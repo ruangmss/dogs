@@ -13,20 +13,24 @@ const App = () => {
     <>
       <BrowserRouter>
         <UserStorage>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="login/*" element={<Login />} />
-            <Route
-              path="conta/*"
-              element={
-                <ProtectedRoute>
-                  <User />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
-          <Footer />
+          <div className="app">
+            <Header />
+            <main className="app-content">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="login/*" element={<Login />} />
+                <Route
+                  path="conta/*"
+                  element={
+                    <ProtectedRoute>
+                      <User />
+                    </ProtectedRoute>
+                  }
+                />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
         </UserStorage>
       </BrowserRouter>
     </>

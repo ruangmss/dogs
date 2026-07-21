@@ -1,3 +1,14 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 55px);
+  min-height: calc(100dvh - 55px);
+}
+
+.app-content {
+  flex: 1;
+}
+
 .container {
   max-width: 1000px;
   padding: 0 20px;

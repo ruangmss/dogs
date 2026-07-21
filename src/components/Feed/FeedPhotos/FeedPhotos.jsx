@@ -11,7 +11,7 @@ const FeedPhotos = () => {
 
   React.useEffect(() => {
     async function fetchPhotos() {
-      const { url, options } = PHOTOS_GET(1, 2, 0);
+      const { url, options } = PHOTOS_GET(1, 3, 0);
       const { response, json } = await request(url, options);
     }
 
