@@ -6,7 +6,7 @@ import { PHOTOS_GET } from '../../../api/api';
 import Error from '../../Form/Error/Error';
 import Loading from '../../Loading/Loading';
 
-const FeedPhotos = () => {
+const FeedPhotos = ({ setModalPhoto }) => {
   const { data, loading, error, request } = useFetch();
 
   React.useEffect(() => {
@@ -30,7 +30,7 @@ const FeedPhotos = () => {
     return (
       <ul className="feed">
         {data.map((photo) => (
-          <FeedPhotosItem key={photo.id} photo={photo} />
+          <FeedPhotosItem key={photo.id} photo={photo} setModalPhoto={setModalPhoto} />
         ))}
       </ul>
     );

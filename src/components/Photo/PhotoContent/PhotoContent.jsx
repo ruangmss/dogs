@@ -1,0 +1,46 @@
+import React from 'react';
+import './PhotoContent.css';
+import { Link } from 'react-router-dom';
+import PhotoComments from '../PhotoComments/PhotoComments';
+import photoViews from '../../../assets/view-black.svg';
+
+const PhotoContent = ({ data }) => {
+  const { photo, comments } = data;
+
+  return (
+    <div className="photo-content">
+      <div className="photo-content-img">
+        <img src={photo.src} alt={photo.title} />
+      </div>
+
+      <div className="photo-content-details">
+        <div>
+          <p>
+            <Link className="photo-author" to={`/perfil/${photo.author}`}>
+              @{photo.author}
+            </Link>
+            <span className="photo-content-views">
+              <img src={photoViews} alt="Ícone de visualização" />
+              {photo.acessos}
+            </span>
+          </p>
+
+          <h1 className="title">
+            <Link to={`/foto/${photo.id}`}>{photo.title}</Link>
+          </h1>
+
+          <ul className="photo-content-attributes">
+            <li>{photo.peso} kg</li>
+            <li>
+              {photo.idade} {photo.idade === 1 ? 'ano' : 'anos'}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <PhotoComments id={photo.id} comments={photo.comments} />
+    </div>
+  );
+};
+
+export default PhotoContent;
