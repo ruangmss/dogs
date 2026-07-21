@@ -1,0 +1,16 @@
+.photo-delete-button {
+  background-color: var(--grey);
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  font-size: 0.875rem;
+  border-radius: var(--sm-border);
+  transition: 0.3s;
+}
+
+.photo-delete-button:focus-visible,
+.photo-delete-button:hover {
+  outline: none;
+  background-color: var(--white);
+  box-shadow: 0 0 0 2px var(--grey);
+  border-color: var(--black);
+}

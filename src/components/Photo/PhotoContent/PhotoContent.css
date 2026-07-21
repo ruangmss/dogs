@@ -52,6 +52,12 @@
   font: var(--secondary-md);
 }
 
+.photo-content-details-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .photo-content-attributes li {
   display: flex;
   align-items: center;

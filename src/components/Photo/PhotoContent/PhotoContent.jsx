@@ -3,9 +3,12 @@ import './PhotoContent.css';
 import { Link } from 'react-router-dom';
 import PhotoComments from '../PhotoComments/PhotoComments';
 import photoViews from '../../../assets/view-black.svg';
+import { UserContext } from '../../../context/UserContext';
+import PhotoDelete from '../PhotoDelete/PhotoDelete';
 
 const PhotoContent = ({ data }) => {
   const { photo, comments } = data;
+  const user = React.useContext(UserContext);
 
   return (
     <div className="photo-content">
@@ -15,15 +18,20 @@ const PhotoContent = ({ data }) => {
 
       <div className="photo-content-details">
         <div>
-          <p>
-            <Link className="photo-author" to={`/perfil/${photo.author}`}>
-              @{photo.author}
-            </Link>
+          <div className="photo-content-details-head">
+            {user.data && user.data.username === photo.author ? (
+              <PhotoDelete id={photo.id} />
+            ) : (
+              <Link className="photo-author" to={`/perfil/${photo.author}`}>
+                @{photo.author}
+              </Link>
+            )}
+
             <span className="photo-content-views">
               <img src={photoViews} alt="Ícone de visualização" />
               {photo.acessos}
             </span>
-          </p>
+          </div>
 
           <h1 className="title">
             <Link to={`/foto/${photo.id}`}>{photo.title}</Link>
