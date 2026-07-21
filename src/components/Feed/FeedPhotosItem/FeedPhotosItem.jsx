@@ -1,6 +1,7 @@
 import React from 'react';
 import './FeedPhotosItem.css';
 import view from '../../../assets/view.svg';
+import Skeleton from '../../../helpers/Skeleton/Skeleton';
 
 const FeedPhotosItem = ({ photo, setModalPhoto }) => {
   function getPhoto() {
@@ -9,7 +10,7 @@ const FeedPhotosItem = ({ photo, setModalPhoto }) => {
 
   return (
     <li className="photo" onClick={getPhoto}>
-      <img src={photo.src} alt={photo.title} />
+      <Skeleton src={photo.src} alt={photo.title} />
       <span className="photo-views">
         <img src={view} alt="Ícone de visualização" />
         {photo.acessos}

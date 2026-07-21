@@ -14,11 +14,24 @@
   grid-row: 1 / 4;
   min-height: 0;
   background-color: var(--grey);
+  position: relative;
+  overflow: hidden;
 }
 
-.photo-content-img img {
+.photo-content-img .skeleton-wrapper {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
+}
+
+.photo-content-img .skeleton,
+.photo-content-img .skeleton-image {
+  width: 100%;
+  height: 100%;
+}
+
+.photo-content-img .skeleton-image {
   object-fit: cover;
 }
 

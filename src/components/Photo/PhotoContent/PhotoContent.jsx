@@ -5,6 +5,7 @@ import PhotoComments from '../PhotoComments/PhotoComments';
 import photoViews from '../../../assets/view-black.svg';
 import { UserContext } from '../../../context/UserContext';
 import PhotoDelete from '../PhotoDelete/PhotoDelete';
+import Skeleton from '../../../helpers/Skeleton/Skeleton';
 
 const PhotoContent = ({ data }) => {
   const { photo, comments } = data;
@@ -13,7 +14,7 @@ const PhotoContent = ({ data }) => {
   return (
     <div className="photo-content">
       <div className="photo-content-img">
-        <img src={photo.src} alt={photo.title} />
+        <Skeleton src={photo.src} alt={photo.title} />
       </div>
 
       <div className="photo-content-details">
