@@ -5,8 +5,7 @@ import Loading from '../../components/Loading/Loading';
 const Home = () => {
   return (
     <section className="container main-container">
-      {/* <Feed /> */}
-      <Loading />
+      <Feed />
     </section>
   );
 };

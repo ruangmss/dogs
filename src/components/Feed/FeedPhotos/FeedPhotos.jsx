@@ -6,13 +6,20 @@ import { PHOTOS_GET } from '../../../api/api';
 import Error from '../../Form/Error/Error';
 import Loading from '../../Loading/Loading';
 
-const FeedPhotos = ({ setModalPhoto }) => {
+const FeedPhotos = ({ page, user, setModalPhoto, setInfinite }) => {
   const { data, loading, error, request } = useFetch();
 
   React.useEffect(() => {
     async function fetchPhotos() {
-      const { url, options } = PHOTOS_GET(1, 3, 0);
+      const total = 3;
+
+      const { url, options } = PHOTOS_GET(page, total, user);
       const { response, json } = await request(url, options);
+
+      // Se o tamanho do array for menor do que o total de itens a carregar, quer dizer que não deve mais ocorrer scroll, pois a quantidade de páginas chegou ao fim
+      if (response && response.ok && json.length < total) {
+        setInfinite(false);
+      }
     }
 
     fetchPhotos();
