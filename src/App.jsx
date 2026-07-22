@@ -14,7 +14,7 @@ import NotFound from './pages/NotFound/NotFound';
 const App = () => {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <UserStorage>
           <div className="app">
             <Header />
