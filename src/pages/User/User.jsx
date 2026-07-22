@@ -11,7 +11,11 @@ import useHead from '../../hooks/useHead';
 const UserFeed = ({ user }) => {
   useHead('Conta | Dogs', 'Acompanhe as fotos publicadas na sua conta do Dogs.');
 
-  return <Feed user={user} />;
+  return (
+    <div className="bg">
+      <Feed user={user} />
+    </div>
+  );
 };
 
 const User = () => {

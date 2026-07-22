@@ -28,7 +28,7 @@ const LoginForgotPassword = () => {
   }
 
   return (
-    <section>
+    <section className="bg">
       <h1 className="title">Esqueceu a Senha?</h1>
 
       {data ? (

@@ -7,7 +7,7 @@ const Home = () => {
   useHead('Home | Dogs', 'Explore as fotos mais recentes compartilhadas pela comunidade Dogs.');
 
   return (
-    <section className="container main-container">
+    <section className="container main-container bg">
       <Feed />
     </section>
   );

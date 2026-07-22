@@ -48,7 +48,7 @@ const LoginChangePassword = () => {
   }
 
   return (
-    <div>
+    <section className="bg">
       <h1 className="title">Alterar Senha</h1>
 
       <form onSubmit={sendForm}>
@@ -57,7 +57,7 @@ const LoginChangePassword = () => {
       </form>
 
       <Error error={error} />
-    </div>
+    </section>
   );
 };
 

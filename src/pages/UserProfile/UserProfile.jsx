@@ -8,13 +8,10 @@ const UserProfile = () => {
   const profileName = user.charAt(0).toUpperCase() + user.slice(1);
   const headTitle = profileName.trim().split(/\s+/)[0];
 
-  useHead(
-    `${headTitle} | Dogs`,
-    `Veja as fotos e publicações compartilhadas por ${user}.`,
-  );
+  useHead(`${headTitle} | Dogs`, `Veja as fotos e publicações compartilhadas por ${user}.`);
 
   return (
-    <section className="container main-container">
+    <section className="container main-container bg">
       <h1 className="title">{profileName}</h1>
       <Feed user={user} />
     </section>

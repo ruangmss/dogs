@@ -50,7 +50,7 @@ const UserPhotoPost = () => {
   }
 
   return (
-    <section className="photo-post">
+    <section className="photo-post bg">
       <form onSubmit={submitPost}>
         <Input label="Nome" type="text" name="nome" {...nome} />
         <Input label="Peso" type="number" name="peso" {...peso} />

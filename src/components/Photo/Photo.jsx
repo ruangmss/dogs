@@ -1,5 +1,4 @@
 import React from 'react';
-import './Photo.css';
 import useFetch from '../../hooks/useFetch';
 import { PHOTO_PAGE_GET } from '../../api/api';
 import Error from '../Form/Error/Error';
@@ -34,7 +33,7 @@ const Photo = () => {
 
   if (data) {
     return (
-      <section className="container main-container">
+      <section className="container main-container bg">
         <PhotoContent single={true} data={data} />
       </section>
     );

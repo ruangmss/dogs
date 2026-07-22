@@ -8,10 +8,10 @@ const NotFound = () => {
   );
 
   return (
-    <div className="container main-container">
+    <section className="container main-container bg">
       <h1 className="title">404</h1>
       <p>Página não encontrada.</p>
-    </div>
+    </section>
   );
 };
 
