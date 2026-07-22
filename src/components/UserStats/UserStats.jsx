@@ -39,11 +39,11 @@ const UserStats = () => {
 
   if (data) {
     return (
-      <section className="user-stats bg">
-        <React.Suspense fallback={<Loading />}>
+      <React.Suspense fallback={<Loading />}>
+        <section className="user-stats bg">
           <UserStatsGraphs data={data} />
-        </React.Suspense>
-      </section>
+        </section>
+      </React.Suspense>
     );
   }
 

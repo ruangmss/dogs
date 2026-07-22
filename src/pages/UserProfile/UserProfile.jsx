@@ -11,7 +11,7 @@ const UserProfile = () => {
   useHead(`${headTitle} | Dogs`, `Veja as fotos e publicações compartilhadas por ${user}.`);
 
   return (
-    <section className="container main-container bg">
+    <section className="container main-container">
       <h1 className="title">{profileName}</h1>
       <Feed user={user} />
     </section>

@@ -37,9 +37,11 @@ const Feed = ({ user }) => {
   return (
     <div>
       {modalPhoto && <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />}
-      {pages.map((page) => (
-        <FeedPhotos key={page} user={user} page={page} setModalPhoto={setModalPhoto} setInfinite={setInfinite} />
-      ))}
+      <div className="bg">
+        {pages.map((page) => (
+          <FeedPhotos key={page} user={user} page={page} setModalPhoto={setModalPhoto} setInfinite={setInfinite} />
+        ))}
+      </div>
     </div>
   );
 };
