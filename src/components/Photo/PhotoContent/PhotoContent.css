@@ -10,6 +10,45 @@
   overflow: hidden;
 }
 
+.photo-single {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.photo-single .photo-content-img {
+  grid-row: 1;
+  border-radius: var(--md-border);
+}
+
+.photo-single .photo-content-img .skeleton-wrapper {
+  position: static;
+  height: auto;
+}
+
+.photo-single .photo-content-img .skeleton-image {
+  height: auto;
+  object-fit: initial;
+}
+
+.photo-single .photo-content-details {
+  padding: 16px 0 0;
+  overflow: visible;
+}
+
+.photo-single .comments,
+.photo-single .comments-form {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.photo-single .comments {
+  margin-top: 32px;
+}
+
+.photo-single .comments-form {
+  margin-top: 24px;
+}
+
 .photo-content-img {
   grid-row: 1 / 4;
   min-height: 0;

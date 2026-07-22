@@ -7,21 +7,22 @@ import './PhotoCommentsForm.css';
 
 const PhotoCommentsForm = ({ id, setComments }) => {
   const [comment, setComment] = React.useState('');
-  const { request, error } = useFetch();
+  const { request, error, loading } = useFetch();
 
   async function submitForm(event) {
     event.preventDefault();
 
     const token = localStorage.getItem('token');
+    const trimmedComment = comment.trim();
 
-    if (!token) {
+    if (!token || !trimmedComment || loading) {
       return;
     }
 
-    const { url, options } = COMMENT_POST(id, { comment }, token);
+    const { url, options } = COMMENT_POST(id, { comment: trimmedComment }, token);
     const { response, json } = await request(url, options);
 
-    if (response.ok) {
+    if (response?.ok && json) {
       setComment('');
       setComments((comments) => [...comments, json]);
     }
@@ -33,11 +34,12 @@ const PhotoCommentsForm = ({ id, setComments }) => {
         value={comment}
         onChange={({ target }) => setComment(target.value)}
         id="comment"
-        label="comment"
+        aria-label="Comentário"
         placeholder="Comente..."
+        required
       />
 
-      <button>
+      <button type="submit" disabled={loading || !comment.trim()} aria-label="Enviar comentário">
         <img src={send} alt="Ícone de envio" />
       </button>
 

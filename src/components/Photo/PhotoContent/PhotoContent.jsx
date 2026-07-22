@@ -7,12 +7,12 @@ import { UserContext } from '../../../context/UserContext';
 import PhotoDelete from '../PhotoDelete/PhotoDelete';
 import Skeleton from '../../../helpers/Skeleton/Skeleton';
 
-const PhotoContent = ({ data }) => {
+const PhotoContent = ({ data, single }) => {
   const { photo, comments } = data;
   const user = React.useContext(UserContext);
 
   return (
-    <div className="photo-content">
+    <div className={single ? 'photo-single' : 'photo-content'}>
       <div className="photo-content-img">
         <Skeleton src={photo.src} alt={photo.title} />
       </div>
