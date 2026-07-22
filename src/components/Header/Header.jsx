@@ -16,7 +16,7 @@ const Header = () => {
         </Link>
 
         {data ? (
-          <Link className="header-link" to="/perfil">
+          <Link className="header-link" to="/conta">
             {data.nome} <img src={user} alt="Ícone de usuário" />
           </Link>
         ) : (
