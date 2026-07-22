@@ -7,6 +7,7 @@ import LoginChangePassword from './LoginChangePassword/LoginChangePassword';
 import { UserContext } from '../../context/UserContext';
 import './Login.css';
 import loginImage from '../../assets/login.jpg';
+import NotFound from '../NotFound/NotFound';
 
 const Login = () => {
   const { login } = React.useContext(UserContext);
@@ -25,6 +26,7 @@ const Login = () => {
           <Route path="cadastro" element={<LoginRegistration />} />
           <Route path="esqueceu-senha" element={<LoginForgotPassword />} />
           <Route path="alterar-senha" element={<LoginChangePassword />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </section>
