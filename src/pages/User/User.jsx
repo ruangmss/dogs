@@ -12,7 +12,7 @@ const UserFeed = ({ user }) => {
   useHead('Conta | Dogs', 'Acompanhe as fotos publicadas na sua conta do Dogs.');
 
   return (
-    <div className="bg">
+    <div>
       <Feed user={user} />
     </div>
   );
