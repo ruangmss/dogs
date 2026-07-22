@@ -7,8 +7,11 @@ import { UserContext } from '../../../context/UserContext';
 import './LoginPage.css';
 import Error from '../../../components/Form/Error/Error';
 import { Link } from 'react-router-dom';
+import useHead from '../../../hooks/useHead';
 
 const LoginPage = () => {
+  useHead('Login | Dogs', 'Acesse sua conta para compartilhar fotos e interagir com a comunidade Dogs.');
+
   const user = useForm();
   const password = useForm();
 

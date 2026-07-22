@@ -6,6 +6,13 @@ import UserStats from '../../components/UserStats/UserStats';
 import Feed from '../../components/Feed/Feed';
 import { UserContext } from '../../context/UserContext';
 import NotFound from '../NotFound/NotFound';
+import useHead from '../../hooks/useHead';
+
+const UserFeed = ({ user }) => {
+  useHead('Conta | Dogs', 'Acompanhe as fotos publicadas na sua conta do Dogs.');
+
+  return <Feed user={user} />;
+};
 
 const User = () => {
   const { data } = React.useContext(UserContext);
@@ -14,7 +21,7 @@ const User = () => {
     <section className="container">
       <UserHeader />
       <Routes>
-        <Route path="/" element={<Feed user={data.id} />} />
+        <Route path="/" element={<UserFeed user={data.id} />} />
         <Route path="postar" element={<UserPhotoPost />} />
         <Route path="estatisticas" element={<UserStats />} />
         <Route path="*" element={<NotFound />} />

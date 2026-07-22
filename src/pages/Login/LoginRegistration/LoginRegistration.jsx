@@ -6,8 +6,11 @@ import { USER_POST } from '../../../api/api';
 import { UserContext } from '../../../context/UserContext';
 import useFetch from '../../../hooks/useFetch';
 import Error from '../../../components/Form/Error/Error';
+import useHead from '../../../hooks/useHead';
 
 const LoginRegistration = () => {
+  useHead('Cadastre-se | Dogs', 'Crie sua conta no Dogs e comece a compartilhar fotos com a comunidade.');
+
   const username = useForm();
   const email = useForm('email');
   const password = useForm('password');
