@@ -1,0 +1,35 @@
+.comments-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  margin: 15px 0;
+}
+
+.comments-form textarea {
+  display: block;
+  width: 100%;
+  font: var(--secondary-sm);
+  resize: none;
+  border: 1px solid var(--grey);
+  padding: 7.5px;
+  border-radius: var(--sm-border);
+  background-color: var(--grey);
+  transition: 0.3s;
+}
+
+.comments-form textarea:focus-visible,
+.comments-form textarea:hover {
+  outline: none;
+  border-color: var(--primary-1);
+  background-color: var(--white);
+  box-shadow: 0 0 0 2px var(--primary-3);
+}
+
+.comments-form button {
+  overflow: hidden;
+  padding: 0 15px;
+}
+
+.comments-form button:disabled {
+  opacity: 0.45;
+}

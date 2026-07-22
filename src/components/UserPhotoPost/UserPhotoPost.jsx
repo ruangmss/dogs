@@ -7,8 +7,11 @@ import useFetch from '../../hooks/useFetch';
 import { PHOTO_POST } from '../../api/api';
 import Error from '../Form/Error/Error';
 import { useNavigate } from 'react-router-dom';
+import useHead from '../../hooks/useHead';
 
 const UserPhotoPost = () => {
+  useHead('Postar | Dogs', 'Compartilhe uma nova foto com a comunidade Dogs.');
+
   const nome = useForm();
   const idade = useForm('number');
   const peso = useForm('number');
@@ -47,7 +50,7 @@ const UserPhotoPost = () => {
   }
 
   return (
-    <section className="photo-post">
+    <section className="photo-post bg">
       <form onSubmit={submitPost}>
         <Input label="Nome" type="text" name="nome" {...nome} />
         <Input label="Peso" type="number" name="peso" {...peso} />

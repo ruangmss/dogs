@@ -1,7 +1,27 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 55px);
+}
+
+.app-content {
+  flex: 1;
+}
+
+.bg {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slide 0.3s ease-out forwards;
+}
+
 .container {
   max-width: 1000px;
   padding: 0 20px;
   margin: 0 auto;
+}
+
+.main-container {
+  margin-top: 30px;
 }
 
 .title {

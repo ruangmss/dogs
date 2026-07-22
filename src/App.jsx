@@ -7,26 +7,36 @@ import Login from './pages/Login/Login';
 import { UserStorage } from './context/UserContext';
 import User from './pages/User/User';
 import ProtectedRoute from './helpers/ProtectedRoute';
+import Photo from './components/Photo/Photo';
+import UserProfile from './pages/UserProfile/UserProfile';
+import NotFound from './pages/NotFound/NotFound';
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <UserStorage>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="login/*" element={<Login />} />
-            <Route
-              path="conta/*"
-              element={
-                <ProtectedRoute>
-                  <User />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
-          <Footer />
+          <div className="app">
+            <Header />
+            <main className="app-content">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="login/*" element={<Login />} />
+                <Route
+                  path="conta/*"
+                  element={
+                    <ProtectedRoute>
+                      <User />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route path="foto/:id" element={<Photo />} />
+                <Route path="perfil/:user" element={<UserProfile />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
         </UserStorage>
       </BrowserRouter>
     </>

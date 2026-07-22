@@ -1,0 +1,51 @@
+.photo-modal {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  z-index: 200;
+  padding: 32px 64px;
+  animation: modal 0.2s ease-out;
+}
+
+.photo-modal .photo-content {
+  width: min(100%, 900px);
+  max-height: calc(100dvh - 64px);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.photo-modal > .error {
+  max-width: 500px;
+  padding: 20px;
+  border-radius: var(--md-border);
+  background-color: var(--white);
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .photo-modal {
+    align-items: flex-start;
+    padding: 32px 20px;
+  }
+
+  .photo-modal .photo-content {
+    max-height: none;
+  }
+}
