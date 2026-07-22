@@ -20,7 +20,7 @@ O projeto foi desenvolvido com foco nas principais ferramentas do ecossistema Re
 
 ---
 
-## ✨ Funcionalidades
+## ⚙️ Funcionalidades
 
 - 🔐 Autenticação de usuários
 - 👤 Cadastro de novos usuários
