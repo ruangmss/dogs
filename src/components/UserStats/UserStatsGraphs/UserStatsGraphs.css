@@ -1,0 +1,74 @@
+.graph {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.graph-item {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--grey);
+  border-radius: var(--md-border);
+  background-color: var(--white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: grid;
+  align-items: center;
+}
+
+.graph-item h2 {
+  margin-bottom: 8px;
+  font: var(--primary-lg);
+}
+
+.graph-summary {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.graph-metric {
+  min-height: 150px;
+  padding: 28px 32px;
+  border-radius: var(--md-border);
+  background: linear-gradient(135deg, var(--primary-1), var(--primary-3));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(118, 71, 1, 0.12);
+}
+
+.graph-metric span {
+  color: var(--primary-2);
+  font: var(--primary-lg);
+}
+
+.graph-metric strong {
+  color: var(--black);
+  font: var(--secondary-xl);
+}
+
+.VictoryContainer {
+  height: initial !important;
+}
+
+@media (max-width: 768px) {
+  .graph {
+    grid-template-columns: 1fr;
+  }
+
+  .graph-summary {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .graph-item {
+    padding: 16px;
+  }
+
+  .graph-metric {
+    min-height: 125px;
+    padding: 24px;
+  }
+}
